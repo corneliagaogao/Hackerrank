@@ -1,0 +1,161 @@
+You are given a positive integer . 
+Your task is to print a palindromic triangle of size .
+
+For example, a palindromic triangle of size  is:
+
+1
+121
+12321
+1234321
+123454321
+You can't take more than two lines. The first line (a for-statement) is already written for you. 
+You have to complete the code using exactly one print statement.
+
+
+for i in range(1,int(input())+1): #More than 2 lines will result in 0 score. Do not leave a blank line also
+    print(int('1' * i)**2)
+    
+#or
+
+for i in range(1,int(input())+1): #More than 2 lines will result in 0 score. Do not leave a blank line also
+    print((10**i//9)**2)
+    
+    
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Task 
+Read in two integers,  and , and print three lines. 
+The first line is the integer division  (While using Python2 remember to import division from __future__). 
+The second line is the result of the modulo operator: . 
+The third line prints the divmod of  and .
+
+
+
+a, b = int(input()), int(input())
+print(a//b,a%b,divmod(a,b),sep='\n')
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Task 
+You are given three integers: , , and , respectively. Print two lines. 
+The first line should print the result of pow(a,b). The second line should print the result of pow(a,b,m).
+
+a,b,m = (int(input()), int(input()), int(input()))
+print(pow(a,b), pow(a,b,m), sep = '\n')
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+Task 
+Read four numbers, , , , and , and print the result of .
+
+
+a,b,c, d = (int(input()), int(input()), int(input()), int(input()))
+print(pow(a,b) + pow(c,d))
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+You are given a positive integer . Print a numerical triangle of height  like the one below:
+
+1
+22
+333
+4444
+55555
+......
+Can you do it using only arithmetic operations, a single for loop and print statement?
+
+Use no more than two lines. The first line (the for statement) is already written for you. You have to complete the print statement.
+
+for i in range(1,int(input())): #More than 2 lines will result in 0 score. Do not leave a blank line also
+    print(10**i//9*i)
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+itertools.combinations(iterable, r) 
+This tool returns the  length subsequences of elements from the input iterable.
+
+Combinations are emitted in lexicographic sorted order. So, if the input iterable is sorted, the combination tuples will be produced in sorted order.
+
+Sample Code
+
+>>> from itertools import combinations
+>>> 
+>>> print list(combinations('12345',2))
+[('1', '2'), ('1', '3'), ('1', '4'), ('1', '5'), ('2', '3'), ('2', '4'), ('2', '5'), ('3', '4'), ('3', '5'), ('4', '5')]
+>>> 
+>>> A = [1,1,3,3,3]
+>>> print list(combinations(A,4))
+[(1, 1, 3, 3), (1, 1, 3, 3), (1, 1, 3, 3), (1, 3, 3, 3), (1, 3, 3, 3)]
+Task
+
+You are given a string . 
+Your task is to print all possible combinations, up to size , of the string in lexicographic sorted order.
+
+Input Format
+A single line containing the string  and integer value  separated by a space.
+
+
+
+from itertools import combinations
+a,b = input().split()
+print(*[''.join(j) for i in range(1,int(b)+1) for j in combinations(sorted(a),i)],sep='\n')
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Task
+
+You are given a string . 
+Your task is to print all possible size  replacement combinations of the string in lexicographic sorted order.
+
+Sample Output
+
+AA
+AC
+AH
+AK
+CC
+CH
+CK
+HH
+HK
+KK
+
+from itertools import combinations_with_replacement
+a,b = input().split()
+print(*[''.join(j) for j in combinations_with_replacement(sorted(a),int(b))], sep ='\n')
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+In this task, we would like for you to appreciate the usefulness of the groupby() function of itertools . To read more about this function, Check this out .
+
+You are given a string . Suppose a character '' occurs consecutively  times in the string. 
+Replace these consecutive occurrences of the character '' with  in the string.
+
+For a better understanding of the problem, check the explanation.
+
+from itertools import groupby
+print(*[(len(list(c)), int(k)) for k, c in groupby(input())])
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+ is a right triangle,  at .
+Therefore, .
+
+Point  is the midpoint of hypotenuse .
+
+You are given the lengths  and . 
+Your task is to find  (angle , as shown in the figure) in degrees.
+
+Input Format
+
+The first line contains the length of side .
+The second line contains the length of side .
+
+import math
+AB,BC=int(input()),int(input())
+hype=math.hypot(AB,BC)                      #to calculate hypotenuse
+res=round(math.degrees(math.acos(BC/hype))) #to calculate required angle 
+degree=chr(176)                                #for DEGREE symbol
+print(res,degree, sep='')
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+
+
+
+
+
